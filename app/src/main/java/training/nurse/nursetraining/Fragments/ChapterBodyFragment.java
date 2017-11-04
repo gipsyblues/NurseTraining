@@ -63,6 +63,8 @@ public class ChapterBodyFragment extends Fragment {
                     chapterModel.setNext(row.getString("next"));
                 else if(row.has("back"))
                     chapterModel.setBack(row.getString("back"));
+                else if (row.has("leftItalic"))
+                    chapterModel.setLeftItalic(row.getString("leftItalic"));
 
                 chapters.add(chapterModel);
             }

@@ -12,16 +12,19 @@ public class Chapter {
     private String procedure;
     private String next;
     private String back;
+    private String leftItalic;
 
     public String getText(){ return text;}
     public String getPhoto() {return photo;}
     public String getTitle() {return title;}
     public String getNext() {return next;}
     public String getBack() {return back;}
+    public String getLeftItalic() {return leftItalic;}
 
     public void setText(String text) {this.text = text;}
     public void setPhoto(String photo) {this.photo = photo;}
     public void setTitle(String title) {this.title = title;}
     public void setNext(String next) {this.next = next;}
     public void setBack(String back) {this.back = back;}
+    public void setLeftItalic(String leftItalic) {this.leftItalic = leftItalic;}
 }

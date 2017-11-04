@@ -52,6 +52,7 @@ public class ChapterAdapter extends ArrayAdapter<Chapter> {
         if (chapter != null) {
             TextView tvText = (TextView) v.findViewById(R.id.tvText);
             TextView tvTitle = (TextView) v.findViewById(R.id.tvTitle);
+            TextView tvLeftItalic = (TextView) v.findViewById(R.id.tvLeftItalic);
             FrameLayout flPic = (FrameLayout) v.findViewById(R.id.flPic);
             ImageView ivPic = (ImageView) v.findViewById(R.id.ivPic);
             Button btnNext = (Button) v.findViewById(R.id.btnNext);
@@ -61,6 +62,14 @@ public class ChapterAdapter extends ArrayAdapter<Chapter> {
                 if (!chapter.getTitle().isEmpty()) {
                     tvTitle.setText(chapter.getTitle());
                     tvTitle.setVisibility(View.VISIBLE);
+                }
+            }
+            catch(NullPointerException e){}
+
+            try {
+                if (!chapter.getLeftItalic().isEmpty()) {
+                    tvLeftItalic.setText(chapter.getLeftItalic());
+                    tvLeftItalic.setVisibility(View.VISIBLE);
                 }
             }
             catch(NullPointerException e){}
