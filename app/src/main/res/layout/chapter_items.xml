@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:visibility="gone"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:textSize="25dp"
+        android:id="@+id/tvTitle" />
+
+    <TextView
+        android:visibility="gone"
+        android:text=""
+        android:layout_width="match_parent"
+        android:gravity="left"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvText" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/flPic"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/ivPic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType = "centerCrop"/>
+    </FrameLayout>
+
+    <Button
+        android:text="Next"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#ffffff"
+        android:id="@+id/btnNext" />
+
+    <Button
+        android:text="Back"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#ffffff"
+        android:id="@+id/btnBack" />
+</LinearLayout>

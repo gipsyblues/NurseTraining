@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NurseTraining</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="menu_list">
+        <item>Chapters</item>
+        <item>Procedures</item>
+        <item>Practice Exam</item>
+        <item>Practical Exam</item>
+        <item>Back</item>
+    </string-array>
+
+    <string-array name="chapter_list">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+        <item>Chapter 4</item>
+        <item>Back</item>
+    </string-array>
+    <string name="title_activity_sample">sampleActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>
