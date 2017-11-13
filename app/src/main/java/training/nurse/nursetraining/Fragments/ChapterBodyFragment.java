@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +21,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import training.nurse.nursetraining.Adapters.ChapterAdapter;
+import training.nurse.nursetraining.Adapters.ChapterBodyAdapter;
 import training.nurse.nursetraining.Models.Chapter;
 import training.nurse.nursetraining.R;
 
@@ -72,13 +79,23 @@ public class ChapterBodyFragment extends Fragment {
             e.printStackTrace();
         }
 
-
-        ListView lvChapters = (ListView) view.findViewById(R.id.lvChapters);
+        //ListView lvChapters = (ListView) view.findViewById(R.id.lvChapters);
 
 // get data from the table by the ListAdapter
-        ChapterAdapter customAdapter = new ChapterAdapter(getContext(), R.layout.chapter_items, chapters);
+        //ChapterAdapter customAdapter = new ChapterAdapter(getContext(), R.layout.chapter_items, chapters);
 
-        lvChapters .setAdapter(customAdapter);
+        //lvChapters .setAdapter(customAdapter);
+
+        ChapterBodyAdapter chapterBodyAdapter = new ChapterBodyAdapter(chapters);
+        chapterBodyAdapter.setContext(getContext());
+        chapterBodyAdapter.notifyDataSetChanged();
+
+        RecyclerView rv = (RecyclerView) view.findViewById(R.id.lvChapters);
+
+        rv.setAdapter(chapterBodyAdapter);
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        rv.setLayoutManager(llm);
 
         getActivity().setTitle(chapter);
         return view;
@@ -104,9 +121,11 @@ public class ChapterBodyFragment extends Fragment {
             ex.printStackTrace();
             return null;
         }
+
         return json;
 
     }
+
 
     public void get_page(){
         switch(chapter){
